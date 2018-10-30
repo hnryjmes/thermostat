@@ -33,17 +33,22 @@ describe("Thermostat", function() {
     expect(thermostat.temp).toEqual(25);
   });
 
-  it('should not set temperature above 32 when power save is on', function() {
-    thermostat.togglePowerSave();
-    for (var i = 0; i < 13; i++) {
-      thermostat.up();
-    }
-    expect(thermostat.temp).toEqual(32);
+  it('should report current energy usage when temp is 20', function() {
+    expect(thermostat.currentEnergyUsage()).toEqual('medium-usage');
+
   });
 
-  it('should be able to reset temperature to 20', function() {
-    thermostat.up();
-    thermostat.reset();
-    expect(thermostat.temp).toEqual(20);
+  it('should report current energy usage when temp is 17', function() {
+    for (var i = 0; i < 3; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.currentEnergyUsage()).toEqual('low-usage');
+
+  });
+  it('should report current energy usage when temp is 25', function() {
+    for (var i = 0; i < 5; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.currentEnergyUsage()).toEqual('high-usage');
   });
 });
