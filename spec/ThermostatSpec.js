@@ -32,4 +32,18 @@ describe("Thermostat", function() {
     }
     expect(thermostat.temp).toEqual(25);
   });
+
+  it('should not set temperature above 32 when power save is on', function() {
+    thermostat.togglePowerSave();
+    for (var i = 0; i < 13; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.temp).toEqual(32);
+  });
+
+  it('should be able to reset temperature to 20', function() {
+    thermostat.up();
+    thermostat.reset();
+    expect(thermostat.temp).toEqual(20);
+  });
 });
