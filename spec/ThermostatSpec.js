@@ -6,31 +6,31 @@ describe("Thermostat", function() {
   });
 
   it('should start with temperature at 20 degrees', function() {
-    expect(thermostat.temp).toEqual(20);
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
   it('should be able to increase temperature', function() {
     thermostat.up();
-    expect(thermostat.temp).toEqual(21);
+    expect(thermostat.getCurrentTemperature()).toEqual(21);
   });
 
   it('should be able to decrease temperature', function() {
     thermostat.down();
-    expect(thermostat.temp).toEqual(19);
+    expect(thermostat.getCurrentTemperature()).toEqual(19);
   });
 
   it('should not set temperature below 10', function() {
     for (var i = 0; i < 11; i++) {
       thermostat.down();
     }
-    expect(thermostat.temp).toEqual(10);
+    expect(thermostat.getCurrentTemperature()).toEqual(10);
   });
 
   it('should not set temperature above 25', function() {
     for (var i = 0; i < 6; i++) {
       thermostat.up();
     }
-    expect(thermostat.temp).toEqual(25);
+    expect(thermostat.getCurrentTemperature()).toEqual(25);
   });
 
   it('should report current energy usage when temp is 20', function() {
@@ -43,8 +43,8 @@ describe("Thermostat", function() {
       thermostat.down();
     }
     expect(thermostat.currentEnergyUsage()).toEqual('low-usage');
-
   });
+
   it('should report current energy usage when temp is 25', function() {
     for (var i = 0; i < 5; i++) {
       thermostat.up();
