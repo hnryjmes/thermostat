@@ -4,14 +4,15 @@
     <title>Thermostat</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="src/Thermostat.js"></script>
+    <script src="jquery.js"></script>
+    <script src="interface.js"></script>
   </head>
   <body>
     <div class="navbar">
       <h1>Thermostat</h1>
     </div>
     <div class="main">
-      <h3>20 °C</h3>
-      <button id="tempUp">Temp 🔼</button>
+      <h3 id='temperature'>°C</h3> <button id="tempUp">Temp 🔼</button>
       <button id="tempDown">Temp 🔽</button>
       <button id="reset">Reset</button>
       <button id="powerSavingModeOn">PSM On</button>
