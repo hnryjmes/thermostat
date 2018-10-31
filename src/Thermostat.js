@@ -48,6 +48,9 @@ Thermostat.prototype.switchPowerSavingModeOff = function() {
 }
 
 Thermostat.prototype.switchPowerSavingModeOn = function() {
+  if (this.temperature > this.MAX_TEMP_PSM_ON) {
+    this.temperature = this.MAX_TEMP_PSM_ON;
+  }
   this.powerSavingMode = true;
 }
 
@@ -63,4 +66,8 @@ Thermostat.prototype.currentEnergyUsage = function() {
     return 'medium-usage';
   }
   return 'high-usage';
+}
+
+Thermostat.prototype.getPowerStatus = function() {
+  return this.powerSavingMode ? 'On' : 'Off';
 }

@@ -66,4 +66,13 @@ describe("Thermostat", function() {
     }
     expect(thermostat.currentEnergyUsage()).toEqual('high-usage');
   });
+
+  it('should report the PSM status at start as on', function() {
+    expect(thermostat.getPowerStatus()).toEqual('On');
+  });
+
+  it('should report the PSM status after switch off as off', function() {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.getPowerStatus()).toEqual('Off');
+  });
 });
