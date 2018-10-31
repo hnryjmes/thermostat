@@ -19,10 +19,10 @@ $( "#reset" ).click(function( event ) {
   thermostat.reset();
 });
 
-$( "#powerSavingOn" ).click(function( event ) {
+$( "#powerSavingModeOn" ).click(function( event ) {
   thermostat.switchPowerSavingModeOn();
 });
-$( "#powerSavingOff" ).click(function( event ) {
+$( "#powerSavingModeOff" ).click(function( event ) {
   thermostat.switchPowerSavingModeOff();
 });
 
