@@ -1,17 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
-  font-family: sans-serif;
-  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
+  background-color: #E1E8ED;
+  color: Gray;
+}
+
+.navbar {
 }
 
 .low-usage {
-  color: green;
+  color: MediumSeaGreen;
 }
 
 .medium-usage {
-  color: black;
+  color: Gray;
 }
 
 .high-usage {
-  color: red;
+  color: Tomato;
+}
+
+.container {
+  margin: 10px 80px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
 }

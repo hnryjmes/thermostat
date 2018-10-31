@@ -12,12 +12,26 @@
       <h3>Thermostat</h3>
     </div>
     <div class="main">
-      <h1><span id='temperature'></span>°C</h1> <button id="tempUp">Temp 🔼</button>
-      <button id="tempDown">Temp 🔽</button>
-      <button id="reset">Reset</button>
-      <button id="powerSavingModeOn">PSM On</button>
-      <button id="powerSavingModeOff">PSM Off</button>
-      <p>Weather in London: <span id="outsideWeather"></span>K</p>
+      <div class="container">
+        <h1><span id='temperature'></span></h1>
+        <p>°C</p>
+        <button id="tempUp">+</button>
+        <button id="tempDown">-</button>
+        <button id="reset">Reset</button>
+        <button id="powerSavingModeOn">PSM On</button>
+        <button id="powerSavingModeOff">PSM Off</button>
+        <p id="power-status"></p>
+      </div>
+      <div class="container">
+        <p>Enter city to get local temperature</p>
+        <input type="text" name="city">
+
+        <button type="button" name="button" id="cityButton">Submit</button>
+
+        <p><span id="cityName"></span><span id="cityTemp"></span></p>
+
+        <p><span id="cityName2"></span><span id="cityTemp2"></span></p>
+      </div>
     </div>
   </body>
 </html>

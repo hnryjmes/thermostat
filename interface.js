@@ -7,8 +7,11 @@ const someJSON = '{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":300,"main"
 
 $('#temperature').text( thermostat.temperature )
 
+$('#power-status').text( "PSM " + thermostat.getPowerStatus() );
+
 $(document).click(function() {
   $('#temperature').text( thermostat.temperature );
+  $('#power-status').text( "PSM " + thermostat.getPowerStatus() );
   $('#temperature').attr('class', thermostat.currentEnergyUsage());
 })
 
@@ -30,11 +33,12 @@ $( "#powerSavingModeOn" ).click(function( event ) {
 $( "#powerSavingModeOff" ).click(function( event ) {
   thermostat.switchPowerSavingModeOff();
 });
-//
-// $.get(API_CALL, function(response) {
-//   $('#outsideWeather').text( response.main.temp );
-// });
 
-$('#outsideWeather').text( JSON.parse(someJSON).main.temp );
+//
+$.get(API_CALL, function(response) {
+  $('#cityTemp').text( "London: " + response.main.temp );
+});
+
+$('#cityTemp2').text( "London: " + JSON.parse(someJSON).main.temp );
 
 });
