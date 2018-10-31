@@ -4,8 +4,9 @@ var thermostat = new Thermostat();
 $('#temperature').text( thermostat.temperature )
 
 $(document).click(function() {
-  $('#temperature').text( thermostat.temperature )
-});
+  $('#temperature').text( thermostat.temperature );
+  $('#temperature').attr('class', thermostat.currentEnergyUsage());
+})
 
 $( "#tempUp" ).click(function( event ) {
   thermostat.up();

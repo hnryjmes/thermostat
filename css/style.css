@@ -3,3 +3,15 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: black;
+}
+
+.high-usage {
+  color: red;
+}
